@@ -10,6 +10,13 @@ const studentSchema = new mongoose.Schema(
     //   type: String,
     //   unique: true
     // },
+    rating: {
+      type: Number,
+    },
+
+    feedback: {
+      type: String,
+    },
 
     personalDetails: { // personal Details ->
       first_name:
@@ -44,7 +51,7 @@ const studentSchema = new mongoose.Schema(
       },
 
       language: {
-        type:String,
+        type: String,
         default: null
       },
 
@@ -155,7 +162,7 @@ const studentSchema = new mongoose.Schema(
         type: String,
         default: null
       },
-      target_exam:[String]
+      target_exam: [String]
 
     },
 
@@ -176,8 +183,8 @@ const studentSchema = new mongoose.Schema(
     req_status: [
       {
         tid_userId: String,
-         name:String,
-        profileimage:String,
+        name: String,
+        profileimage: String,
         status: String, // accept or reject or request
         about: String,
         subject: String,
@@ -223,6 +230,10 @@ const studentSchema = new mongoose.Schema(
       type: String,
       default: null
     },
+      isadmin:{
+    type:Boolean,
+    default:false,
+  },
   },
 
   { timestamps: { createdAt: true, updatedAt: true }, versionKey: false }
